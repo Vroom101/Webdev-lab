@@ -1,0 +1,165 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Commodity Image Gallery</title>
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      background-color: #72be67;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    "
+  >
+    <div
+      style="
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 850px;
+      "
+    >
+      <h2 style="color: #2c3e50; margin-bottom: 10px">Available Commodities</h2>
+      <p style="color: #7f8c8d; margin-bottom: 20px">
+        <em>Click on an item in the image to view its specific details.</em>
+      </p>
+
+      <img
+        src="commodity-collage.jpg"
+        usemap="#commodity-map"
+        alt="Collage of Rice, Wheat, and Cooking Oil"
+        style="
+          border-radius: 8px;
+          border: 2px solid #ddd;
+          max-width: 100%;
+          height: auto;
+        "
+      />
+
+      <map name="commodity-map">
+        <area
+          shape="rect"
+          coords="0,0,266,400"
+          alt="Rice Details"
+          href="basmati.jpg"
+          title="Rice Details"
+        />
+
+        <area
+          shape="rect"
+          coords="267,0,532,400"
+          alt="Wheat Details"
+          href="wheat.jpg"
+          title="Wheat Details"
+        />
+
+        <area
+          shape="rect"
+          coords="533,0,800,400"
+          alt="Cooking Oil Details"
+          href="c"
+          title="Cooking Oil Details"
+        />
+      </map>
+
+      <div
+        style="
+          margin-top: 30px;
+          text-align: left;
+          padding: 15px;
+          border-top: 2px dashed #eee;  
+        "
+      >
+        <div id="rice-info" style="margin-bottom: 15px">
+          <strong style="color: #d35400">Rice Section:</strong>
+          Available in 5kg and 10kg bags. Grade A Sona Masoori.
+        </div>
+        <div id="wheat-info" style="margin-bottom: 15px">
+          <strong style="color: #2980b9">Wheat Section:</strong>
+          Locally sourced whole grain wheat. High fiber content.
+        </div>
+        <div id="oil-info">
+          <strong style="color: #27ae60">Cooking Oil Section:</strong>
+          Fortified with Vitamin A & D. Available in 1L pouches.
+        </div>
+      </div>
+    </div>
+  </body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Commodity Gallery</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; padding: 20px; line-height: 1.6">
+    <h2 style="color: #333">Available Commodities</h2>
+    <p style="color: #666">
+      Click on an item in the image to see stock details.
+    </p>
+
+    <img
+      src="allfour.png"
+      width="600"
+      height="200"
+      alt="Ration Commodities Map"
+      usemap="#commoditymap"
+      style="
+        border: 2px solid #555;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      "
+    />
+
+    <map name="commoditymap">
+      <area
+        shape="rect"
+        coords="0,0,200,200"
+        alt="Rice"
+        href="stock-list.html"
+        title="View Rice Stock"
+      />
+      <area
+        shape="rect"
+        coords="201,0,400,200"
+        alt="Wheat"
+        href="stock-list.html"
+        title="View Wheat Stock"
+      />
+      <area
+        shape="rect"
+        coords="401,0,600,200"
+        alt="Sugar"
+        href="stock-list.html"
+        title="View Salt Stock"
+      />
+      <area
+        shape="rect"
+        coords="801,0,600,200"
+        alt="Cooking Oil"
+        href="stock-list.html"
+        title="View Cooking oil Stock"
+      />
+    </map>
+
+    <section style="background: #f0f0f0; padding: 15px; border-radius: 5px">
+      <h3 style="margin-top: 0">Commodity Descriptions</h3>
+      <ul>
+        <li><strong>Rice:</strong> Premium Basmati Rice</li>
+        <li><strong>Wheat:</strong> High-quality whole grain.</li>
+        <li><strong>Salt</strong> Monthly quota: 1kg per family.</li>
+        <li><strong>Cooking Oil Pouch</strong> Monthly quota: 1 pouch per family.</li>
+      </ul>
+    </section>
+    <hr />
+  </body>
+</html>

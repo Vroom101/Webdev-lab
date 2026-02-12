@@ -3,28 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <title>Daily Distribution Records</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body
-    style="
-      font-family: &quot;Segoe UI&quot;, Tahoma, sans-serif;
-      background-color: #f9f9f9;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    "
-  >
-    <div
-      style="
-        width: 100%;
-        max-width: 800px;
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      "
-    >
-      <table style="width: 100%; border-collapse: collapse; text-align: left">
+  <body class="dist-page">
+    <div class="container-card dist-container">
+      <table class="dist-table">
         <caption
           style="
             font-size: 1.4em;
@@ -35,62 +18,47 @@
         >
           Daily Ration Distribution Log - January 30, 2026
         </caption>
-
-        <thead style="background-color: #130dd6; color: white">
+        <thead>
           <tr>
-            <th style="padding: 12px; border: 1px solid #ddd">Time</th>
-            <th style="padding: 12px; border: 1px solid #ddd">
-              Beneficiary Name
-            </th>
-            <th style="padding: 12px; border: 1px solid #ddd">Card Number</th>
-            <th style="padding: 12px; border: 1px solid #ddd">Item Issued</th>
-            <th style="padding: 12px; border: 1px solid #ddd">Quantity</th>
+            <th>Time</th>
+            <th>Beneficiary Name</th>
+            <th>Card Number</th>
+            <th>Item Issued</th>
+            <th>Quantity</th>
           </tr>
         </thead>
-
-        <tbody style="color: #333">
-          <tr style="background-color: #ffffff">
-            <td style="padding: 12px; border: 1px solid #ddd">09:15 AM</td>
-            <td style="padding: 12px; border: 1px solid #ddd">Amit Sharma</td>
-            <td style="padding: 12px; border: 1px solid #ddd">RAT882910</td>
-            <td style="padding: 12px; border: 1px solid #ddd">
-              Basmati Rice
-            </td>
-            <td style="padding: 12px; border: 1px solid #ddd">10 kg</td>
+        <tbody>
+          <tr>
+            <td>09:15 AM</td>
+            <td>Amit Sharma</td>
+            <td>RAT882910</td>
+            <td>Basmati Rice</td>
+            <td>10 kg</td>
           </tr>
-          <tr style="background-color: #f2f2f2">
-            <td style="padding: 12px; border: 1px solid #ddd">10:30 AM</td>
-            <td style="padding: 12px; border: 1px solid #ddd">Priya Patil</td>
-            <td style="padding: 12px; border: 1px solid #ddd">RAT112233</td>
-            <td style="padding: 12px; border: 1px solid #ddd">Wheat Flour</td>
-            <td style="padding: 12px; border: 1px solid #ddd">5 kg</td>
+          <tr>
+            <td>10:30 AM</td>
+            <td>Priya Patil</td>
+            <td>RAT112233</td>
+            <td>Wheat Flour</td>
+            <td>5 kg</td>
           </tr>
-          <tr style="background-color: #ffffff">
-            <td style="padding: 12px; border: 1px solid #ddd">11:45 AM</td>
-            <td style="padding: 12px; border: 1px solid #ddd">John Doe</td>
-            <td style="padding: 12px; border: 1px solid #ddd">RAT556677</td>
-            <td style="padding: 12px; border: 1px solid #ddd">Sunflower Oil</td>
-            <td style="padding: 12px; border: 1px solid #ddd">2 L</td>
+          <tr>
+            <td>11:45 AM</td>
+            <td>John Doe</td>
+            <td>RAT556677</td>
+            <td>Sunflower Oil</td>
+            <td>2 L</td>
           </tr>
-          <tr style="background-color: #f2f2f2">
-            <td style="padding: 12px; border: 1px solid #ddd">01:20 PM</td>
-            <td style="padding: 12px; border: 1px solid #ddd">Suresh Raina</td>
-            <td style="padding: 12px; border: 1px solid #ddd">RAT449900</td>
-            <td style="padding: 12px; border: 1px solid #ddd">Salt</td>
-            <td style="padding: 12px; border: 1px solid #ddd">2 kg</td>
+          <tr>
+            <td>01:20 PM</td>
+            <td>Suresh Raina</td>
+            <td>RAT449900</td>
+            <td>Salt</td>
+            <td>2 kg</td>
           </tr>
         </tbody>
       </table>
-
-      <p
-        style="
-          margin-top: 15px;
-          font-size: 0.85em;
-          color: #7f8c8d;
-          text-align: right;
-        "
-      >
-      </p>
     </div>
+    <script src="javascript/script.js"></script>
   </body>
 </html>

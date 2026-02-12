@@ -3,151 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <title>Stock Availability List</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body
-    style="
-      font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f2f5;
-      padding: 40px;
-    "
-  >
-    <div
-      style="
-        max-width: 500px;
-        margin: auto;
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      "
-    >
-      <h2
-        style="
-          color: #2c3e50;
-          border-bottom: 2px solid #3498db;
-          padding-bottom: 10px;
-          margin-bottom: 20px;
-        "
-      >
+  <body class="stock-page">
+    <div class="container-card stock-container">
+      <h2 style="border-bottom: 2px solid #3498db; padding-bottom: 10px">
         Current Stock Availability
       </h2>
 
-      <ol style="padding-left: 20px">
-        <li
-          style="
-            margin-bottom: 20px;
-            color: #34495e;
-            font-weight: bold;
-            font-size: 1.1em;
-          "
-        >
+      <ol class="stock-list">
+        <li class="stock-item">
           Premium Basmati Rice
-          <dl
-            style="
-              font-weight: normal;
-              font-size: 0.9em;
-              margin-top: 8px;
-              color: #666;
-            "
-          >
-            <dt style="display: inline; font-weight: bold; color: #2980b9">
-              Quantity Available:
-            </dt>
-            <dd style="display: inline; margin-left: 5px">450</dd>
+          <dl class="stock-details">
+            <dt class="stock-label">Quantity Available:</dt>
+            <dd class="stock-value">450</dd>
             <br />
-            <dt style="display: inline; font-weight: bold; color: #2980b9">
-              Unit:
-            </dt>
-            <dd style="display: inline; margin-left: 5px">Kilograms (kg)</dd>
+            <dt class="stock-label">Unit:</dt>
+            <dd class="stock-value">Kilograms (kg)</dd>
           </dl>
         </li>
 
-        <li
-          style="
-            margin-bottom: 20px;
-            color: #34495e;
-            font-weight: bold;
-            font-size: 1.1em;
-          "
-        >
+        <li class="stock-item">
           Whole Wheat Flour (Atta)
-          <dl
-            style="
-              font-weight: normal;
-              font-size: 0.9em;
-              margin-top: 8px;
-              color: #666;
-            "
-          >
-            <dt style="display: inline; font-weight: bold; color: #2980b9">
-              Quantity Available:
-            </dt>
-            <dd style="display: inline; margin-left: 5px">300</dd>
+          <dl class="stock-details">
+            <dt class="stock-label">Quantity Available:</dt>
+            <dd class="stock-value">300</dd>
             <br />
-            <dt style="display: inline; font-weight: bold; color: #2980b9">
-              Unit:
-            </dt>
-            <dd style="display: inline; margin-left: 5px">
-              Packets (5kg each)
-            </dd>
+            <dt class="stock-label">Unit:</dt>
+            <dd class="stock-value">Packets (5kg each)</dd>
           </dl>
         </li>
 
-        <li
-          style="
-            margin-bottom: 20px;
-            color: #34495e;
-            font-weight: bold;
-            font-size: 1.1em;
-          "
-        >
+        <li class="stock-item">
           Refined Sunflower Oil
-          <dl
-            style="
-              font-weight: normal;
-              font-size: 0.9em;
-              margin-top: 8px;
-              color: #666;
-            "
-          >
-            <dt style="display: inline; font-weight: bold; color: #2980b9">
-              Quantity Available:
-            </dt>
-            <dd style="display: inline; margin-left: 5px">120</dd>
+          <dl class="stock-details">
+            <dt class="stock-label">Quantity Available:</dt>
+            <dd class="stock-value">120</dd>
             <br />
-            <dt style="display: inline; font-weight: bold; color: #2980b9">
-              Unit:
-            </dt>
-            <dd style="display: inline; margin-left: 5px">Liters (L)</dd>
+            <dt class="stock-label">Unit:</dt>
+            <dd class="stock-value">Liters (L)</dd>
           </dl>
         </li>
 
-        <li
-          style="
-            margin-bottom: 10px;
-            color: #34495e;
-            font-weight: bold;
-            font-size: 1.1em;
-          "
-        >
+        <li class="stock-item">
           Rock Salt
-          <dl
-            style="
-              font-weight: normal;
-              font-size: 0.9em;
-              margin-top: 8px;
-              color: #666;
-            "
-          >
-            <dt style="display: inline; font-weight: bold; color: #2980b9">
-              Quantity Available:
-            </dt>
-            <dd style="display: inline; margin-left: 5px">85</dd>
+          <dl class="stock-details">
+            <dt class="stock-label">Quantity Available:</dt>
+            <dd class="stock-value">85</dd>
             <br />
-            <dt style="display: inline; font-weight: bold; color: #2980b9">
-              Unit:
-            </dt>
-            <dd style="display: inline; margin-left: 5px">Kilograms (kg)</dd>
+            <dt class="stock-label">Unit:</dt>
+            <dd class="stock-value">Kilograms (kg)</dd>
           </dl>
         </li>
       </ol>
@@ -163,5 +68,6 @@
         <em>Last updated: Jan 30, 2026</em>
       </p>
     </div>
+    <script src="javascript/script.js"></script>
   </body>
 </html>

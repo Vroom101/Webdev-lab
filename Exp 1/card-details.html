@@ -1,38 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop Information Card</title>
-</head>
-<body style="font-family: Arial, sans-serif; display: flex; justify-content: center; padding-top: 50px; background-color: #f4f4f4;">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="card-layout">
+    <div class="shop-card">
+      <h2>Ration Shop Details</h2>
 
-    <div style="width: 350px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px; border-left: 5px solid #2ecc71;">
-        
-        <h2 style="margin-top: 0; color: #333; border-bottom: 1px solid #eee; padding-bottom: 10px;">Ration Shop Details</h2>
+      <div class="detail-row">
+        <strong>Shop ID:</strong>
+        <span>#RS-99201</span>
+      </div>
 
-        <p style="margin: 10px 0;">
-            <strong>Shop ID:</strong> #RS-99201
-        </p>
+      <div class="detail-row">
+        <strong>Shop Owner Name:</strong>
+        <span>Avaneesh B</span>
+      </div>
 
-        <p style="margin: 10px 0;">
-            <strong>Shop Owner Name:</strong> Avaneesh B 
-        </p>
+      <div class="detail-row">
+        <strong>Area:</strong>
+        <span>Downtown Market, Shivaji Park, Dadar (W), Mumbai</span>
+      </div>
 
-        <p style="margin: 10px 0;">
-            <strong>Area:</strong> Downtown Market , Shivaji Park , Dadar (W) , Mumbai
-        </p>
+      <div class="detail-row">
+        <strong>Shop Status:</strong>
+        <span class="status-badge">ACTIVE</span>
+      </div>
 
-        <p style="margin: 10px 0;">
-            <strong>Shop Status:</strong> 
-            <span style="background-color: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9em;">ACTIVE</span>
-        </p>
-
-        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 15px 0;">
-
-        <p style="margin: 0; font-size: 0.85em; color: #666;">
-
-        </p>
+      <hr style="border: 0; border-top: 1px dashed #ddd; margin: 20px 0" />
+      <p style="text-align: center; color: #999; font-size: 0.8em">
+        Government Verified Location
+      </p>
     </div>
-
-</body>
+    <script src="javascript/script.js"></script>
+  </body>
 </html>

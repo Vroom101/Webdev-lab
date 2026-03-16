@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ration Shop Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .section-container {
+            background: #fff;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e1e8ed;
+        }
+        .section-header {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .stock-alert {
+            color: red;
+            font-weight: bold;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f8f9fa; color: #333; }
+        header { position: sticky; top: 0; z-index: 1000; }
+    </style>
+</head>
+<body class="home-page">
+
+    <header>
+        <h1>Public Distribution System - Ration Shop Portal</h1>
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#shop-details">Shop Details</a>
+            <a href="#stock-section">Stock</a>
+            <a href="#categories">Beneficiaries</a>
+            <a href="#registration">Register</a>
+            <a href="#distribution">Distribution</a>
+            <a href="#gallery">Commodity</a>
+            <a href="#links">Reports</a>
+            <button id="resetBtn" style="margin-left: 10px; padding: 8px 16px; background-color: #e74c3c; color: white; border: none; border-radius: 20px; cursor: pointer; font-weight: 500;">Reset System Data</button>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="dashboard" class="section-container" style="text-align: center;">
+            <h2>Portal Overview</h2>
+            <p>This portal facilitates the digital distribution of essential commodities to verified beneficiaries.</p>
+            <p><strong>Welcome to Fair Price Shop #RS-99201</strong></p>
+        </section>
+
+        <section id="shop-details" class="section-container shop-card">
+            <h2 class="section-header">Ration Shop Details</h2>
+            <div class="detail-row">
+                <strong>Shop ID:</strong> <span>#RS-99201</span>
+            </div>
+            <div class="detail-row">
+                <strong>Shop Owner Name:</strong> <span>Avaneesh B</span>
+            </div>
+            <div class="detail-row">
+                <strong>Area:</strong> <span>Downtown Market, Shivaji Park, Dadar (W), Mumbai</span>
+            </div>
+            <div class="detail-row">
+                <strong>Shop Status:</strong> <span class="status-badge">ACTIVE</span>
+            </div>
+        </section>
+
+        <section id="stock-section" class="section-container stock-page">
+            <div class="container-card stock-container">
+                <h2 class="section-header">Current Stock Availability</h2>
+                <ol class="stock-list">
+                    <li class="stock-item">Premium Basmati Rice <dl class="stock-details"><dt class="stock-label">Quantity:</dt><dd class="stock-value">450</dd> kg</dl></li>
+                    <li class="stock-item">Whole Wheat Flour (Atta) <dl class="stock-details"><dt class="stock-label">Quantity:</dt><dd class="stock-value">300</dd> kg</dl></li>
+                    <li class="stock-item">Refined Sunflower Oil <dl class="stock-details"><dt class="stock-label">Quantity:</dt><dd class="stock-value">120</dd> L</dl></li>
+                    <li class="stock-item">Rock Salt <dl class="stock-details"><dt class="stock-label">Quantity:</dt><dd class="stock-value">85</dd> kg</dl></li>
+                </ol>
+                <div id="stock-alert-container"></div>
+            </div>
+        </section>
+
+        <section id="registration" class="section-container form-page">
+            <div class="form-wrapper" style="margin: 0 auto; box-shadow: none;">
+                <h2 class="section-header">New Beneficiary Registration</h2>
+                <form id="beneficiaryForm">
+                    <div class="form-group">
+                        <label class="form-label">Full Name <span style="color: red">*</span></label>
+                        <input type="text" name="fullName" placeholder="Enter full name" required class="form-input" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Ration Card Number <span style="color: red">*</span></label>
+                        <input type="text" name="rationNumber" placeholder="e.g. 1234567890 (10 digits)" required class="form-input" />
+                        <div id="ration-error" class="error-message"></div>
+                    </div>
+                    <div class="form-group form-row">
+                        <div style="flex: 1">
+                            <label class="form-label">Family Size <span style="color: red">*</span></label>
+                            <input type="number" name="familySize" min="1" required class="form-input" />
+                        </div>
+                        <div style="flex: 1">
+                            <label class="form-label">Category <span style="color: red">*</span></label>
+                            <select name="category" required class="form-select">
+                                <option value="">Select...</option>
+                                <option value="APL">APL</option>
+                                <option value="BPL">BPL</option>
+                                <option value="AAY">Antyodaya (AAY)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Residential Address <span style="color: red">*</span></label>
+                        <textarea name="address" rows="3" placeholder="Enter full address" required class="form-textarea" style="resize: vertical"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submit-btn">Register & Issue Ration</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="categories" class="section-container cat-page">
+            <div class="cat-container" style="max-width: 100%; border: none;">
+                <h2 class="cat-header">Ration Beneficiary Categories & Search</h2>
+                <div style="margin-bottom: 20px; padding: 15px; background: #e8f4fd; border-radius: 8px;">
+                    <h3>Search Beneficiary Status</h3>
+                    <input type="text" id="searchCardNo" placeholder="Enter Ration Card No" style="padding: 8px; width: 60%;">
+                    <button id="searchBtn" style="padding: 8px 15px; background: #3498db; color: white; border: none; cursor: pointer;">Search</button>
+                    <div id="searchResult" style="margin-top: 10px; font-weight: bold;"></div>
+                </div>
+                <div class="cat-card apl">
+                    <strong style="font-size: 1.2em">APL (Above Poverty Line)</strong>
+                    <p>Provides access to essential commodities at standard subsidized rates.</p>
+                </div>
+                <div class="cat-card bpl">
+                    <strong style="font-size: 1.2em">BPL (Below Poverty Line)</strong>
+                    <p>Eligible for highly subsidized food grains and essential supplies.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="distribution" class="section-container dist-page">
+            <div class="dist-container" style="max-width: 100%;">
+                <table class="dist-table">
+                    <caption style="font-size: 1.4em; font-weight: bold; margin-bottom: 20px; color: #2c3e50;">
+                        Daily Ration Distribution Log
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>Time / Date</th>
+                            <th>Beneficiary Name</th>
+                            <th>Card Number</th>
+                            <th>Item Issued</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="gallery" class="section-container gallery-page">
+            <h2 class="section-header">Available Commodities Gallery</h2>
+            <img src="allfour.png" width="600" height="200" alt="Ration Commodities Map" usemap="#commoditymap" class="gallery-img" style="max-width: 100%; height: auto;" />
+            <map name="commoditymap">
+                <area shape="rect" coords="0,0,200,200" alt="Rice" href="#stock-section" title="View Rice Stock" />
+                <area shape="rect" coords="201,0,400,200" alt="Wheat" href="#stock-section" title="View Wheat Stock" />
+                <area shape="rect" coords="401,0,600,200" alt="Sugar" href="#stock-section" title="View Salt Stock" />
+                <area shape="rect" coords="801,0,600,200" alt="Cooking Oil" href="#stock-section" title="View Cooking oil Stock" />
+            </map>
+            <div class="gallery-desc">
+                <h3>Commodity Descriptions</h3>
+                <ul>
+                    <li><strong>Rice:</strong> Premium Basmati Rice</li>
+                    <li><strong>Wheat:</strong> High-quality whole grain.</li>
+                    <li><strong>Salt:</strong> Monthly quota: 1kg per family.</li>
+                    <li><strong>Cooking Oil Pouch:</strong> Monthly quota: 1 pouch per family.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="links" class="section-container links-page">
+            <div class="links-container" style="margin: 0 auto;">
+                <h2 style="color: #06038d; text-align: center;">Government Initiatives</h2>
+                <ul style="list-style: none; padding: 0">
+                    <li>
+                        <a href="https://nfsa.gov.in/" target="_blank" class="link-item nfsa">
+                            <strong>National Food Security Portal</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://controllerofrationing-mumbai.gov.in/" target="_blank" class="link-item onorc">
+                            <strong>ONORC (One Nation One Ration Card)</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:1967" class="link-item helpline">
+                            <strong>National Helpline: 1967</strong>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="home-footer">
+        <p>Ration Shop Management System - Web Programming Lab Integration</p>
+    </footer>
+
+    <script src="javascript/script.js"></script>
+</body>
+</html>

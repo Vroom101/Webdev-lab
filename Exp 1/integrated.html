@@ -95,20 +95,34 @@
         <section id="registration" class="section-container form-page">
             <div class="form-wrapper" style="margin: 0 auto; box-shadow: none;">
                 <h2 class="section-header">New Beneficiary Registration</h2>
-                <form id="beneficiaryForm">
+                <form id="beneficiaryForm" novalidate>
                     <div class="form-group">
                         <label class="form-label">Full Name <span style="color: red">*</span></label>
-                        <input type="text" name="fullName" placeholder="Enter full name" required class="form-input" />
+                        <input type="text" name="fullName" placeholder="Enter full name" required class="form-input" minlength="3" maxlength="60" />
+                        <div class="error-message" data-error-for="fullName"></div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Ration Card Number <span style="color: red">*</span></label>
-                        <input type="text" name="rationNumber" placeholder="e.g. 1234567890 (10 digits)" required class="form-input" />
-                        <div id="ration-error" class="error-message"></div>
+                        <input type="text" name="rationNumber" placeholder="e.g. 1234567890 (10 digits)" required class="form-input" maxlength="10" />
+                        <div class="error-message" data-error-for="rationNumber"></div>
+                    </div>
+                    <div class="form-group form-row">
+                        <div style="flex: 1">
+                            <label class="form-label">Email Address <span style="color: red">*</span></label>
+                            <input type="email" name="email" placeholder="name@example.com" required class="form-input" />
+                            <div class="error-message" data-error-for="email"></div>
+                        </div>
+                        <div style="flex: 1">
+                            <label class="form-label">Mobile Number <span style="color: red">*</span></label>
+                            <input type="tel" name="mobile" placeholder="10-digit mobile number" required class="form-input" maxlength="10" />
+                            <div class="error-message" data-error-for="mobile"></div>
+                        </div>
                     </div>
                     <div class="form-group form-row">
                         <div style="flex: 1">
                             <label class="form-label">Family Size <span style="color: red">*</span></label>
-                            <input type="number" name="familySize" min="1" required class="form-input" />
+                            <input type="number" name="familySize" min="1" max="15" required class="form-input" />
+                            <div class="error-message" data-error-for="familySize"></div>
                         </div>
                         <div style="flex: 1">
                             <label class="form-label">Category <span style="color: red">*</span></label>
@@ -118,11 +132,25 @@
                                 <option value="BPL">BPL</option>
                                 <option value="AAY">Antyodaya (AAY)</option>
                             </select>
+                            <div class="error-message" data-error-for="category"></div>
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <div style="flex: 1">
+                            <label class="form-label">Portal Password <span style="color: red">*</span></label>
+                            <input type="password" name="password" placeholder="At least 8 characters" required class="form-input" minlength="8" maxlength="32" />
+                            <div class="error-message" data-error-for="password"></div>
+                        </div>
+                        <div style="flex: 1">
+                            <label class="form-label">Confirm Password <span style="color: red">*</span></label>
+                            <input type="password" name="confirmPassword" placeholder="Re-enter password" required class="form-input" minlength="8" maxlength="32" />
+                            <div class="error-message" data-error-for="confirmPassword"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Residential Address <span style="color: red">*</span></label>
-                        <textarea name="address" rows="3" placeholder="Enter full address" required class="form-textarea" style="resize: vertical"></textarea>
+                        <textarea name="address" rows="3" placeholder="Enter full address" required class="form-textarea" style="resize: vertical" minlength="10" maxlength="180"></textarea>
+                        <div class="error-message" data-error-for="address"></div>
                     </div>
                     <button type="submit" class="submit-btn" id="submit-btn">Register & Issue Ration</button>
                 </form>

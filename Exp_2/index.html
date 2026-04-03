@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic PHP Web Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-elements">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+    
+    <div class="container-card form-wrapper">
+      <div class="header-section">
+        <h2>Beneficiary Registration</h2>
+      </div>
+
+      <form id="registrationForm" action="#" method="POST">
+        <div class="form-group">
+          <label class="form-label" for="fullName">Full Name <span class="required">*</span></label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" class="form-input" />
+          <div class="error-msg" id="nameError"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address <span class="required">*</span></label>
+          <input type="email" id="email" name="email" placeholder="e.g. name@example.com" class="form-input" />
+          <div class="error-msg" id="emailError"></div>
+        </div>
+
+        <div class="form-group form-row">
+          <div class="flex-1">
+            <label class="form-label" for="rationNumber">Ration Card No. <span class="required">*</span></label>
+            <input type="text" id="rationNumber" name="rationNumber" placeholder="e.g. RAT123456" class="form-input" />
+            <div class="error-msg" id="rationError"></div>
+          </div>
+          <div class="flex-1">
+            <label class="form-label" for="familySize">Family Size <span class="required">*</span></label>
+            <input type="number" id="familySize" name="familySize" min="1" placeholder="Members" class="form-input" />
+            <div class="error-msg" id="familyError"></div>
+          </div>
+        </div>
+
+        <div class="form-group form-row">
+          <div class="flex-1">
+            <label class="form-label" for="category">Category <span class="required">*</span></label>
+            <select id="category" name="category" class="form-select">
+              <option value="">Select Category...</option>
+              <option value="APL">APL</option>
+              <option value="BPL">BPL</option>
+              <option value="AAY">Antyodaya (AAY)</option>
+            </select>
+            <div class="error-msg" id="categoryError"></div>
+          </div>
+          <div class="flex-1">
+            <label class="form-label" for="hobby">Favorite Hobby (Optional)</label>
+            <input type="text" id="hobby" name="hobby" placeholder="e.g. Reading, Coding" class="form-input" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="address">Residential Address <span class="required">*</span></label>
+          <textarea id="address" name="address" rows="3" placeholder="Enter full address" class="form-textarea"></textarea>
+          <div class="error-msg" id="addressError"></div>
+        </div>
+
+        <div class="submit-actions">
+          <p class="submit-hint">Choose a method to submit form data:</p>
+          <div class="btn-group">
+            <button type="button" class="submit-btn btn-post" data-method="POST" data-action="post_registration.php">
+              Submit via POST
+            </button>
+            <button type="button" class="submit-btn btn-get" data-method="GET" data-action="get_registration.php">
+              Submit via GET
+            </button>
+            <button type="button" class="submit-btn btn-request" data-method="POST" data-action="request_registration.php">
+              Submit via REQUEST
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
